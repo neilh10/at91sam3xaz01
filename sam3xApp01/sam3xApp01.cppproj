@@ -1,0 +1,748 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.0</ProjectVersion>
+    <ToolchainName>com.Atmel.ARMGCC</ToolchainName>
+    <ProjectGuid>{ce69789d-a3ab-416c-a5be-36eba69ebb4a}</ProjectGuid>
+    <avrdevice>ATSAM3X4E</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>sam3xApp01</AssemblyName>
+    <Name>sam3xApp01</Name>
+    <RootNamespace>sam3xApp01</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue />
+    <eraseonlaunchrule>1</eraseonlaunchrule>
+    <AsfVersion>3.4.1</AsfVersion>
+    <avrtool>com.atmel.avrdbg.tool.samice</avrtool>
+    <avrtoolinterface>JTAG</avrtoolinterface>
+    <com_atmel_avrdbg_tool_samice>
+      <ToolType>com.atmel.avrdbg.tool.samice</ToolType>
+      <ToolName>SAM-ICE</ToolName>
+      <ToolNumber>000028005675</ToolNumber>
+      <KeepTimersRunning>true</KeepTimersRunning>
+      <OverrideVtor>false</OverrideVtor>
+      <OverrideVtorValue>
+      </OverrideVtorValue>
+      <Channel>
+        <host>127.0.0.1</host>
+        <port>1064</port>
+        <ssl>False</ssl>
+      </Channel>
+      <ToolOptions>
+        <InterfaceName>JTAG</InterfaceName>
+        <InterfaceProperties>
+          <JtagDbgClock>0</JtagDbgClock>
+          <JtagProgClock>1000000</JtagProgClock>
+          <IspClock>150000</IspClock>
+          <JtagInChain>false</JtagInChain>
+          <JtagEnableExtResetOnStartSession>true</JtagEnableExtResetOnStartSession>
+          <JtagDevicesBefore>0</JtagDevicesBefore>
+          <JtagDevicesAfter>0</JtagDevicesAfter>
+          <JtagInstrBitsBefore>0</JtagInstrBitsBefore>
+          <JtagInstrBitsAfter>0</JtagInstrBitsAfter>
+        </InterfaceProperties>
+      </ToolOptions>
+    </com_atmel_avrdbg_tool_samice>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <ArmGccCpp>
+        <armgcc.common.general.symbols>__SAM3X8E__</armgcc.common.general.symbols>
+        <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+        <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+        <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+        <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+        <armgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles</Value>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles\CMSIS\Include</Value>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles\Device\ATMEL</Value>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles\Device\ATMEL\sam3xa\include</Value>
+          </ListValues>
+        </armgcc.compiler.directories.IncludePaths>
+        <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
+        <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+        <armgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles</Value>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles\CMSIS\Include</Value>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles\Device\ATMEL</Value>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles\Device\ATMEL\sam3xa\include</Value>
+          </ListValues>
+        </armgcccpp.compiler.directories.IncludePaths>
+        <armgcccpp.compiler.optimization.level>Optimize for size (-Os)</armgcccpp.compiler.optimization.level>
+        <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcccpp.compiler.warnings.AllWarnings>True</armgcccpp.compiler.warnings.AllWarnings>
+        <armgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.Libraries>
+        <armgcccpp.linker.libraries.LibrarySearchPaths>
+          <ListValues>
+            <Value>../cmsis/linkerScripts</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.LibrarySearchPaths>
+        <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+        <armgcccpp.linker.miscellaneous.LinkerFlags>-Tsam3x8e_flash.ld</armgcccpp.linker.miscellaneous.LinkerFlags>
+      </ArmGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <ArmGccCpp>
+        <armgcc.common.general.symbols>__SAM3X8E__</armgcc.common.general.symbols>
+        <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+        <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+        <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+        <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+        <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+        <armgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>BOARD=ARDUINO_DUE_X</Value>
+          </ListValues>
+        </armgcc.compiler.symbols.DefSymbols>
+        <armgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles</Value>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles\CMSIS\Include</Value>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles\Device\ATMEL</Value>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles\Device\ATMEL\sam3xa\include</Value>
+            <Value>.</Value>
+            <Value>..</Value>
+            <Value>../arduino/hardware/arduino/sam/cores/arduino</Value>
+            <Value>../arduino/hardware/arduino/sam/system/libsam</Value>
+            <Value>../arduino/hardware/arduino/sam/variants/arduino_due_x</Value>
+            <Value>../arduino/hardware/arduino/sam/system/libsam/include</Value>
+            <Value>../asf/sam/drivers/rstc</Value>
+          </ListValues>
+        </armgcc.compiler.directories.IncludePaths>
+        <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+        <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+        <armgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>USB_PID=USB_PID_DUE</Value>
+            <Value>BOARD=ARDUINO_DUE_X</Value>
+          </ListValues>
+        </armgcccpp.compiler.symbols.DefSymbols>
+        <armgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles</Value>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles\CMSIS\Include</Value>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles\Device\ATMEL\sam3xa\include</Value>
+            <Value>C:\Program Files\Atmel\Atmel Studio 6.0\extensions\Atmel\ARMGCC\3.3.1.93\ARMSupportFiles\Device\ATMEL</Value>
+            <Value>.</Value>
+            <Value>../arduino/hardware/arduino/sam/cores/arduino</Value>
+            <Value>../arduino/hardware/arduino/sam/system/libsam</Value>
+            <Value>../arduino/hardware/arduino/sam/system/libsam/include</Value>
+            <Value>../arduino/hardware/arduino/sam/variants/arduino_due_x</Value>
+            <Value>../arduino/libraries/SD</Value>
+            <Value>../arduino/libraries/SD/utility</Value>
+            <Value>../arduino/hardware/arduino/sam/libraries/Audio</Value>
+            <Value>../arduino/hardware/arduino/sam/libraries/Ethernet</Value>
+            <Value>../arduino/hardware/arduino/sam/libraries/Scheduler</Value>
+            <Value>../arduino/hardware/arduino/sam/libraries/SPI</Value>
+            <Value>../arduino/hardware/arduino/sam/libraries/USBHost</Value>
+            <Value>../Arduino/hardware/arduino/sam/libraries/Wire</Value>
+            <Value>../asf/common/services/clock/sam3x</Value>
+            <Value>../asf/sam/drivers/pmc</Value>
+            <Value>../asf/sam/drivers/rstc</Value>
+            <Value>../asf/sam/utils/cmsis/sam3x/include/component</Value>
+            <Value>../asf/sam/drivers/efc</Value>
+          </ListValues>
+        </armgcccpp.compiler.directories.IncludePaths>
+        <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
+        <armgcccpp.compiler.warnings.AllWarnings>True</armgcccpp.compiler.warnings.AllWarnings>
+        <armgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.Libraries>
+        <armgcccpp.linker.libraries.LibrarySearchPaths>
+          <ListValues>
+            <Value>../cmsis/linkerScripts</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.LibrarySearchPaths>
+        <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+        <armgcccpp.linker.miscellaneous.LinkerFlags>-Tsam3x8e_flash.ld</armgcccpp.linker.miscellaneous.LinkerFlags>
+        <armgcccpp.assembler.debugging.DebugLevel>Default (-g)</armgcccpp.assembler.debugging.DebugLevel>
+        <armgcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.preprocessingassembler.debugging.DebugLevel>
+      </ArmGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\Arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\binary.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\Client.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\cortex_handlers.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\cxxabi-compat.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\HardwareSerial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\hooks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\iar_calls_sam3.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\IPAddress.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\IPAddress.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\itoa.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\itoa.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\Print.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\Print.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\Printable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\Reset.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\Reset.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\RingBuffer.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\RingBuffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\Server.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\Stream.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\Stream.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\syscalls.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\syscalls_sam3.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\Tone.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\UARTClass.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\UARTClass.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\Udp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\USARTClass.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\USARTClass.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\USB\CDC.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\USB\HID.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\USB\USBAPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\USB\USBCore.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\USB\USBCore.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\USB\USBDesc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\WCharacter.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\WInterrupts.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\WInterrupts.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\wiring.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\wiring.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\wiring_analog.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\wiring_analog.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\wiring_constants.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\wiring_digital.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\wiring_digital.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\wiring_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\wiring_pulse.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\wiring_pulse.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\wiring_shift.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\wiring_shift.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\WMath.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\WMath.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\WString.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\cores\arduino\WString.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\Scheduler\Scheduler.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\Scheduler\Scheduler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\SPI\SPI.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\SPI\SPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\address.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\adk.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\adk.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\confdescparser.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\hid.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\hid2.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\hidboot.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\hidboot.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\hidusagestr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\KeyboardController.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\KeyboardController.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\MouseController.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\MouseController.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\parsetools.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\parsetools.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\Usb.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\Usb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\libraries\USBHost\usb_ch9.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\chip.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\adc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\dacc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\interrupt_sam_nvic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\pio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\pio_it.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\pmc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\pwmc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\rtc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\rtt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\spi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\tc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\timetick.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\twi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\udp.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\udphs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\uotghs_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\uotghs_host.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\usart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\USB_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\USB_host.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\include\wdt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\adc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\adc12_sam3u.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\dacc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\interrupt_sam_nvic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\pio.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\pmc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\pwmc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\rtc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\rtt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\tc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\timetick.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\twi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\udp.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\udphs.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\uotghs.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\uotghs_device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\uotghs_host.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\usart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\system\libsam\source\wdt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\variants\arduino_due_x\pins_arduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\variants\arduino_due_x\variant.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\hardware\arduino\sam\variants\arduino_due_x\variant.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\libraries\SD\File.cpp-compileIssueSd2Card">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\libraries\SD\SD.cpp-compileIssuesSd2Card">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\libraries\SD\SD.h-compileIssues">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\libraries\SD\utility\FatStructs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\libraries\SD\utility\Sd2Card.cpp-compileFails">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\libraries\SD\utility\Sd2Card.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\libraries\SD\utility\Sd2PinMap.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\libraries\SD\utility\SdFat.h-compileIssue">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\libraries\SD\utility\SdFatmainpage.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\libraries\SD\utility\SdFatUtil.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\libraries\SD\utility\SdFile.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\libraries\SD\utility\SdInfo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="arduino\libraries\SD\utility\SdVolume.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="asf\sam\drivers\rstc\rstc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="asf\sam\drivers\rstc\rstc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="az23project.h">
+      <SubType>compile</SubType>
+      <Link>az23project.h</Link>
+    </Compile>
+    <Compile Include="cmsis\src\startup_sam3xa.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cmsis\src\system_sam3xa.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Hpl_efc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Hpl_efc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HalTwiPca9698.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HalTwiPca9698ExpPort.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HilDataFlash.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HilDataFlash.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hil_setupSystem.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main-sam3xApp01.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osLoop.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="osLoop.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sysDebug.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sysDebug.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="trial\board.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="trial\compiler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="trial\sysclk.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uiCmdPwr.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uiConsole.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uiConsole.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uiDebugSubSysMasks.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="arduino\" />
+    <Folder Include="arduino\hardware\" />
+    <Folder Include="arduino\hardware\arduino\" />
+    <Folder Include="arduino\hardware\arduino\sam\" />
+    <Folder Include="arduino\hardware\arduino\sam\cores\" />
+    <Folder Include="arduino\hardware\arduino\sam\cores\arduino\" />
+    <Folder Include="arduino\hardware\arduino\sam\cores\arduino\USB\" />
+    <Folder Include="arduino\hardware\arduino\sam\libraries\" />
+    <Folder Include="arduino\hardware\arduino\sam\libraries\Audio\" />
+    <Folder Include="arduino\hardware\arduino\sam\libraries\Ethernet\" />
+    <Folder Include="arduino\hardware\arduino\sam\libraries\Scheduler" />
+    <Folder Include="arduino\hardware\arduino\sam\libraries\SPI\" />
+    <Folder Include="arduino\hardware\arduino\sam\libraries\USBHost\" />
+    <Folder Include="arduino\hardware\arduino\sam\libraries\WiFi\" />
+    <Folder Include="arduino\hardware\arduino\sam\libraries\wire\" />
+    <Folder Include="arduino\hardware\arduino\sam\variants" />
+    <Folder Include="arduino\hardware\arduino\sam\system" />
+    <Folder Include="arduino\hardware\arduino\sam\system\libsam" />
+    <Folder Include="arduino\hardware\arduino\sam\system\libsam\include" />
+    <Folder Include="arduino\hardware\arduino\sam\system\libsam\source" />
+    <Folder Include="arduino\hardware\arduino\sam\variants\arduino_due_x" />
+    <Folder Include="arduino\libraries\" />
+    <Folder Include="arduino\libraries\SD\" />
+    <Folder Include="arduino\libraries\SD\utility\" />
+    <Folder Include="asf\common" />
+    <Folder Include="asf\common\services" />
+    <Folder Include="asf\common\services\clock" />
+    <Folder Include="asf\common\services\clock\sam3x" />
+    <Folder Include="asf\common\services\twi" />
+    <Folder Include="asf\sam" />
+    <Folder Include="asf\sam\drivers" />
+    <Folder Include="asf\sam\drivers\rstc" />
+    <Folder Include="asf\sam\utils" />
+    <Folder Include="asf\sam\utils\cmsis" />
+    <Folder Include="asf\sam\utils\cmsis\sam3x" />
+    <Folder Include="asf\sam\utils\cmsis\sam3x\include" />
+    <Folder Include="asf\sam\utils\cmsis\sam3x\include\component" />
+    <Folder Include="asf\sam\utils\preprocessor-del" />
+    <Folder Include="cmsis\" />
+    <Folder Include="cmsis\linkerScripts\" />
+    <Folder Include="cmsis\src\" />
+    <Folder Include="asf" />
+    <Folder Include="trial" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="arduino\hardware\arduino\sam\cores\arduino\main.cpp-notused">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="arduino\hardware\arduino\sam\cores\arduino\Tone.cpp.disabled">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="arduino\hardware\arduino\sam\libraries\USBHost\README">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="arduino\hardware\arduino\sam\system\libsam\source\pio_it.c.disabled">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="arduino\libraries\SD\keywords.txt">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="arduino\libraries\SD\README.txt">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="cmsis\linkerScripts\sam3x8e_flash.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="cmsis\linkerScripts\sam3x8e_sram.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="cmsis\linkerScripts\sam3x8_flash.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="cmsis\linkerScripts\sam3x8_sram.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="cmsis\linkerScripts\sam3x_flash.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="cmsis\linkerScripts\sam3x_sram.ld">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
